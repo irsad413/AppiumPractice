@@ -8,23 +8,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 public class CalculatorPage {
-
-    public  CalculatorPage(){
-
-        PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver()) , this );
-
+    public CalculatorPage() {
+        PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver()), this);
     }
 
-    @AndroidFindBy(accessibility = "multiply" )
-    public MobileElement multiply ;
+    @AndroidFindBy(accessibility = "multiply")
+    public MobileElement multiply;
 
+    @AndroidFindBy(accessibility = "equals")
+    public MobileElement equals;
+
+    @AndroidFindBy(id = "com.google.android.calculator:id/result_final")
+    public MobileElement result;
+
+    /*
+    public void multiply() {
+        multiply.click();
+    } */
 
     public void clickSingleDigit(int digit) {
-
-        String id = "com.google.android.calculator:id/digit_" + digit ;
-
-        MobileElement number = Driver.getDriver().findElement(By.id(id)) ;
-
+        String id = "com.google.android.calculator:id/digit_" + digit;
+        MobileElement number = Driver.getDriver().findElement(By.id(id));
         number.click();
     }
 }
+

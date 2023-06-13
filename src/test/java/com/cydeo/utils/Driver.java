@@ -14,7 +14,6 @@ import java.net.URL;
 import java.util.Objects;
 
 public class Driver {
-
     private static AppiumDriver<MobileElement> driver;
     private static URL url;
 
@@ -75,8 +74,8 @@ public class Driver {
                     desiredCapabilities2.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 3");
                     desiredCapabilities2.setCapability(MobileCapabilityType.APP, "/Users/oscar/IdeaProjects/EU10_AppiumAutomation/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");
                     // for most of the applications, you need to tell Appium, app package (location, in mobile phone), app Activity for it
-                    desiredCapabilities2.setCapability("appPackage", "com.swaglabsmobileapp");
-                    desiredCapabilities2.setCapability("appActivity", "com.swaglabsmobileapp.SplashActivity");
+                    desiredCapabilities2.setCapability("appPackage","com.swaglabsmobileapp");
+                    desiredCapabilities2.setCapability("appActivity","com.swaglabsmobileapp.SplashActivity");
                     try {
                         url = new URL("http://localhost:4723/wd/hub");
                     } catch (MalformedURLException e) {
@@ -90,7 +89,7 @@ public class Driver {
                     capsIphone.setCapability("appium:deviceName", "iPhone.*");
                     capsIphone.setCapability("appium:deviceOrientation", "portrait");
                     capsIphone.setCapability("appium:automationName", "XCUITest");
-                    capsIphone.setCapability(MobileCapabilityType.APP, "https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa");  // iphone application
+                    capsIphone.setCapability(MobileCapabilityType.APP,"https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa");  // iphone application
                     try {
                         url = new URL("YOUR HUB URL FROM USER SETTINGS--COPY PASTE HERE");
                     } catch (MalformedURLException e) {
@@ -105,7 +104,7 @@ public class Driver {
                     capsAndroid.setCapability("appium:deviceOrientation", "portrait");
                     capsAndroid.setCapability("appium:automationName", "UiAutomator2");
                     capsAndroid.setCapability(MobileCapabilityType.APP, "https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk"); // --> for android app
-                    capsAndroid.setCapability("appium:appWaitActivity", "com.swaglabsmobileapp.MainActivity");
+                    capsAndroid.setCapability("appium:appWaitActivity","com.swaglabsmobileapp.MainActivity");
 
                     try {
                         url = new URL("YOUR HUB URL FROM USER SETTINGS--COPY PASTE HERE");
@@ -125,7 +124,7 @@ public class Driver {
                     sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
                     capsAndroidSYS.setCapability("sauce:options", sauceOptions);
                     capsAndroidSYS.setCapability(MobileCapabilityType.APP, "https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk"); // --> for android app
-                    capsAndroidSYS.setCapability("appium:appWaitActivity", "com.swaglabsmobileapp.MainActivity");
+                    capsAndroidSYS.setCapability("appium:appWaitActivity","com.swaglabsmobileapp.MainActivity");
 
                     try {
                         url = new URL("https://ondemand.eu-central-1.saucelabs.com/wd/hub");
@@ -143,10 +142,6 @@ public class Driver {
         if (Objects.nonNull(driver)) {
             driver.closeApp();
             driver = null;
-
-
         }
-
     }
-
 }

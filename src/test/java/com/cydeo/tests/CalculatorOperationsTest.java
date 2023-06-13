@@ -99,6 +99,8 @@ public class CalculatorOperationsTest {
         String actResult = result.getText() ;
         System.out.println("actResult = " + actResult);
 
+        assertEquals( 3 , Integer.parseInt(actResult));
+
 
 
 

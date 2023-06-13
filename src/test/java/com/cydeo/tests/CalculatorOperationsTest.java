@@ -69,13 +69,44 @@ public class CalculatorOperationsTest {
 
 
 
-
-
-
-
-
-
     }
+
+    /**
+     * 15 / 5 = 3
+     */
+
+    @Test
+    public void divideTest(){
+
+        MobileElement one  = driver.findElement(By.id("com.google.android.calculator:id/digit_1")) ;
+        one.click();
+
+        MobileElement five  = driver.findElement(By.id("com.google.android.calculator:id/digit_5")) ;
+        five.click();
+
+        MobileElement divide  = driver.findElement(MobileBy.AccessibilityId("divide"))  ;
+        divide.click();
+
+
+        five.click();
+
+        MobileElement equals  = driver.findElement(MobileBy.AccessibilityId("equals"))  ;
+        equals.click();
+
+        MobileElement result  = driver.findElement(MobileBy.id("com.google.android.calculator:id/result_final"))  ;
+
+
+        String actResult = result.getText() ;
+        System.out.println("actResult = " + actResult);
+
+
+
+
+
+
+
+        }
+
 
 
     @AfterEach

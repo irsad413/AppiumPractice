@@ -17,9 +17,11 @@ public class EtsyChromeTest  extends  WebTestBase{
         WebElement searchField = driver.findElement(By.name("search_query")) ;
         searchField.sendKeys("Baklava" + Keys.ENTER);
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
+        WebElement results = driver.findElement(By.xpath("//span[contains(text(),'results,')]")) ;
 
+        System.out.println("results = " + results.getText());
 
 
     }
